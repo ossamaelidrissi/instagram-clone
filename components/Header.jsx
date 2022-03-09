@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 function Header() {
     const {data : session} = useSession();
     const router = useRouter();
+
+    console.log(session);
   return (
     <header className = "bg-white shadow-sm border-b sticky top-0 z-50 flex items-center w-full justify-around md:mx-auto mt-2 md:mt-0 py-5 lg:py-0">
 
@@ -48,7 +50,7 @@ function Header() {
                             <img onClick = {signOut} src={session?.user?.image} alt="" className = "rounded-full h-10 cursor-pointer" />
                         </>
                     ) : (
-                        <button onClick = {signIn} >Sign In</button>
+                        <button onClick = {() => router.push("/auth/signin")} >Sign In</button>
                     )
                 }
 
