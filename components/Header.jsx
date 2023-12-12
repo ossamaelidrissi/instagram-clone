@@ -52,7 +52,7 @@ function Header() {
                             <img onClick = {signOut} src={session?.user?.image} alt="" className = "rounded-full h-10 cursor-pointer" />
                         </>
                     ) : (
-                        <button onClick = {() => router.push("/auth/signin")} >Sign In</button>
+                        <button onClick = {() => router.push("/auth/signin")} >Login</button>
                     )
                 }
 
